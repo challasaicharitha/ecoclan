@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="home-section">
+<a href="https://lh3.googleusercontent.com/p9cw9rzQc_oAoSg8fgml51NeeaJhk5r5IMedf7bPFl0U97IBx_qhyZc18kM3bFR4SiRhmdBEU_HnDFj44wggsh33aHCApnGn6l7HHYgZCwN4A3jmBNwItbQZ5BEON5CyrqEgnnxhYg=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/p9cw9rzQc_oAoSg8fgml51NeeaJhk5r5IMedf7bPFl0U97IBx_qhyZc18kM3bFR4SiRhmdBEU_HnDFj44wggsh33aHCApnGn6l7HHYgZCwN4A3jmBNwItbQZ5BEON5CyrqEgnnxhYg=w600-h315-p-k"  /> </a>
+</div>
+    {% for post in posts %}
+      <article class="media content-section">
+
+        <div class="media-body">
+          <div class="article-metadata">
+            <p class="article-content">{{ post.author }}</p>
+
+          </div>
+          <h2><p class="article-title">{{ post.title }}</p></h2>
+          <p class="article-content">{{ post.content }}</p>
+        </div>
+    </article>
+   {% endfor %}
+
+    {% endblock content %}

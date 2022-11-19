@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<article class="media content-section">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<a href="https://lh3.googleusercontent.com/pbUi_je7oVoI3vTqOYKKdK8adt_G4C3smAuzhkNfYj61MfVV6cMDDBZ7hiGCn8MvG_eIZbwJpJDaVK1HLmH0mI_H05DSHLCi_RBErR-Qu_eruTNmdyzL46gG3ax0nPV7N6I9pWBApg=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/pbUi_je7oVoI3vTqOYKKdK8adt_G4C3smAuzhkNfYj61MfVV6cMDDBZ7hiGCn8MvG_eIZbwJpJDaVK1HLmH0mI_H05DSHLCi_RBErR-Qu_eruTNmdyzL46gG3ax0nPV7N6I9pWBApg=w600-h315-p-k" align="center" /> </a>
+
+
+</div>
+<div class="carousel-item">
+<a href="https://lh3.googleusercontent.com/FHetmdk0Ca6G1JNFi-BJFCf64vvCVrsBqwG8GX28pqSrBfObS5mu2um-_rnDDQVSkXUKr1zy5BEttGVTZJSQo4DcMuWOf0KN7RVISToobv5QhfR3TJEEo2idPQV33DdJlTHRa4Jbww=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/FHetmdk0Ca6G1JNFi-BJFCf64vvCVrsBqwG8GX28pqSrBfObS5mu2um-_rnDDQVSkXUKr1zy5BEttGVTZJSQo4DcMuWOf0KN7RVISToobv5QhfR3TJEEo2idPQV33DdJlTHRa4Jbww=w600-h315-p-k" align="center"/> </a>
+
+
+
+</div>
+<div class="carousel-item">
+<a href="https://lh3.googleusercontent.com/V08Yl3GVbOLi5T61jQD9_g_idAHkIPE64zx1ae_4BWYWSsatcewGAd4QftdXRJvDd6p7Xe7Ok6izUc7pY5E20S754iH7mXuG99wDFputjIOp0QsFPrbA5VRGXUyv2mre7zFR7zGn8g=w2400?source=screenshot.guru"> <img src="https://lh3.googleusercontent.com/V08Yl3GVbOLi5T61jQD9_g_idAHkIPE64zx1ae_4BWYWSsatcewGAd4QftdXRJvDd6p7Xe7Ok6izUc7pY5E20S754iH7mXuG99wDFputjIOp0QsFPrbA5VRGXUyv2mre7zFR7zGn8g=w600-h315-p-k" align="center" /> </a>
+
+
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button>
+</div>
+</article>
+    <div class="content-section">
+    <form  method="Post"  action="">
+      {{form.hidden_tag()}}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Join Today</legend>
+        <div class="form-group">
+          {{form.username.label(class="form-control-label")}}
+          {% if form.username.errors %}
+            {{ form.username(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+          {% else %}
+              {{form.username(class="form-control form-control-lg")}}
+          {% endif %}
+
+        </div>
+        <div class="form-group">
+          {{form.email.label(class="form-control-label")}}
+          {% if form.email.errors %}
+            {{ form.email(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+          {% else %}
+              {{form.email(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{form.password.label(class="form-control-label")}}
+          {% if form.password.errors %}
+            {{ form.password(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+          {% else %}
+              {{form.password(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+        <div class="form-group">
+          {{form.confirm_password.label(class="form-control-label")}}
+          {% if form.confirm_password.errors %}
+            {{ form.confirm_password(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.confirm_password.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+
+            </div>
+          {% else %}
+              {{form.confirm_password(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+      </fieldset>
+      <div class="form-group">
+        {{form.submit(class="btn btn-outline-info")}}
+        <small class="text-muted ml-2">
+          <a href="{{url_for("newsletter_request")}}"><button type="button" class="btn btn-outline-info">Newsletter</button></a>
+        </small>
+
+      </div>
+
+    </form>
+    </div>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+        Already Have An Account? <a class="ml-2" href="{{url_for('newsletter_request')}}"><button type="button" class="btn btn-outline-info">You can avail the Newsletter Now!</button> </a>
+
+      </small>
+    </div>
+{% endblock content %}
